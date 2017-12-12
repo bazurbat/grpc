@@ -791,6 +791,7 @@ ifneq ($(LDFLAGS_PROTOBUF_PKG_CONFIG),)
 LDFLAGS_PROTOBUF_PKG_CONFIG += $(shell $(PKG_CONFIG) --libs-only-L protobuf | sed s/L/Wl,-rpath,/)
 endif
 endif
+HOST_LDFLAGS += $(LDFLAGS_PROTOBUF_PKG_CONFIG)
 else
 PC_LIBS_GRPCXX = -lprotobuf
 endif
